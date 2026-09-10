@@ -3,11 +3,11 @@
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "/SkillMatch-AI/backend/app/main.py"
+      "destination": "SkillMatch-AI/backend/app/main.py"
     },
     {
       "source": "/(.*)",
-      "destination": "/SkillMatch-AI/frontend/$1"
+      "destination": "SkillMatch-AI/frontend/$1"
     }
   ]
 }
