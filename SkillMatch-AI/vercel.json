@@ -1,0 +1,25 @@
+{
+  "builds": [
+    {
+      "src": "SkillMatch-AI/frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    },
+    {
+      "src": "SkillMatch-AI/backend/app/main.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "SkillMatch-AI/backend/app/main.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "SkillMatch-AI/frontend/dist/$1"
+    }
+  ]
+}
