@@ -7,7 +7,11 @@ from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 from pypdf import PdfReader
 from groq import Groq
+import sys
+import os
 
+# Ensure backend root directory is in system path for Vercel
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 app = FastAPI(title="SkillMatch AI Enterprise Engine")
 
 # CORS Configuration
